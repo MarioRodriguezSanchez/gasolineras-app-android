@@ -16,4 +16,7 @@
     <string name="sel_mun">Seleccione Municipio</string>
     <string name="sel_comb">Seleccione combustible</string>
 
+    <string name="settings">Configuración</string>
+    <string name="showRestricted">Mostrar gasolineras de venta restringida</string>
+
 </resources>

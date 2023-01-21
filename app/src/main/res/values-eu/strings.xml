@@ -16,4 +16,8 @@
     <string name="sel_prov">Probintzia aukeratu</string>
     <string name="sel_mun">Udalerria aukeratu</string>
     <string name="sel_comb">Erregaia aukeratu</string>
+
+    <string name="settings">Ezarpena</string>
+    <string name="showRestricted">Erakutsi salmenta mugatuko gasolindegiak</string>
+
 </resources>

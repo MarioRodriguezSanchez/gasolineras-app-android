@@ -142,6 +142,8 @@ public class Gasolinera implements Serializable {
         return longitude;
     }
 
+    public Boolean isRestricted() { return venta.toString().equals("R"); }
+
     @Override
     public String toString() {
         return "Gasolinera{" +

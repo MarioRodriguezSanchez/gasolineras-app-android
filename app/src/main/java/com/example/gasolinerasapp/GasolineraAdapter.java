@@ -67,7 +67,6 @@ public class GasolineraAdapter extends RecyclerView.Adapter<GasolineraAdapter.My
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.gasolinera_list_row, parent, false);
-
         itemView.setOnLongClickListener(this);
         return new MyViewHolder(itemView);
     }
@@ -82,6 +81,13 @@ public class GasolineraAdapter extends RecyclerView.Adapter<GasolineraAdapter.My
         holder.gasoleoPrem.setText(prettyPrintPrice(gasolinera.getGasPrem()));
         holder.gasolina95.setText(prettyPrintPrice(gasolinera.getGasolina95E5()));
         holder.gasolina98.setText(prettyPrintPrice(gasolinera.getGasolina98E5()));
+
+        if(gasolinera.isRestricted()){
+            if (holder.gasoleoA.getText().toString().contains("€")){holder.gasoleoA.append("*");}
+            if (holder.gasoleoPrem.getText().toString().contains("€")){holder.gasoleoPrem.append("*");}
+            if (holder.gasolina95.getText().toString().contains("€")){holder.gasolina95.append("*");}
+            if (holder.gasolina98.getText().toString().contains("€")){holder.gasolina98.append("*");}
+        }
     }
 
     @Override
