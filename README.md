@@ -17,6 +17,7 @@ El objetivo de esta aplicación es proporcionar información actualizada sobre g
   - Español
 - En la lista de gasolineras, tras realizar pulsación prolongada sobre una de las gasolineras se redirige a Google Maps con la dirección de la estación
 - Al iniciar la aplicación, ésta recuerda los valores usados en la última búsqueda (CA, provincia, municipio y filtro por precio más económico)
+- Se proporciona la posibilidad de mostrar/ocultar las gasolineras de uso restringido a socios y profesionales.
 
 ## Cómo se ha desarrollado la aplicación
 ---
