@@ -21,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -46,6 +47,7 @@ public class GasolineraAdapter extends RecyclerView.Adapter<GasolineraAdapter.My
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView rotulo, localidad, direccion, gasoleoA, gasoleoPrem, gasolina95, gasolina98;
 
+        public ConstraintLayout contenedor;
         public MyViewHolder(View view) {
             super(view);
             rotulo = view.findViewById(R.id.rotulo);
@@ -55,6 +57,7 @@ public class GasolineraAdapter extends RecyclerView.Adapter<GasolineraAdapter.My
             gasoleoPrem = view.findViewById(R.id.gasoleoPrem);
             gasolina95 = view.findViewById(R.id.gasolina95);
             gasolina98 = view.findViewById(R.id.gasolina98);
+            contenedor = view.findViewById(R.id.relativeLayout);
         }
     }
 
@@ -81,12 +84,14 @@ public class GasolineraAdapter extends RecyclerView.Adapter<GasolineraAdapter.My
         holder.gasoleoPrem.setText(prettyPrintPrice(gasolinera.getGasPrem()));
         holder.gasolina95.setText(prettyPrintPrice(gasolinera.getGasolina95E5()));
         holder.gasolina98.setText(prettyPrintPrice(gasolinera.getGasolina98E5()));
+        holder.contenedor.setBackgroundColor(0x00000000);
 
         if(gasolinera.isRestricted()){
             if (holder.gasoleoA.getText().toString().contains("€")){holder.gasoleoA.append("*");}
             if (holder.gasoleoPrem.getText().toString().contains("€")){holder.gasoleoPrem.append("*");}
             if (holder.gasolina95.getText().toString().contains("€")){holder.gasolina95.append("*");}
             if (holder.gasolina98.getText().toString().contains("€")){holder.gasolina98.append("*");}
+            holder.contenedor.setBackgroundColor(0xFFFFFFF1);
         }
     }
 
